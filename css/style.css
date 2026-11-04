@@ -1,1 +1,372 @@
+/* =========================
+   RESET
+========================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f1f5f9;
+    color: #1e293b;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: linear-gradient(135deg, #075985, #0284c7);
+    color: white;
+    padding: 25px 18px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.logo {
+    font-size: 42px;
+}
+
+.header h1 {
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.header p {
+    font-size: 12px;
+    margin-top: 7px;
+    color: #dbeafe;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    gap: 8px;
+    padding: 13px 10px;
+    background: white;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 10px #0001;
+}
+
+.navbar a {
+    flex-shrink: 0;
+    text-decoration: none;
+    color: #075985;
+    background: #e0f2fe;
+    padding: 10px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.navbar a:active {
+    background: #bae6fd;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 16px;
+}
+
+section {
+    margin-bottom: 23px;
+    scroll-margin-top: 70px;
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+.section-title h2 {
+    color: #075985;
+    font-size: 21px;
+}
+
+.section-title p {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.card {
+    min-width: 0;
+    padding: 17px 12px;
+    border-radius: 13px;
+    color: white;
+    box-shadow: 0 4px 10px #0002;
+    transition: 0.2s;
+}
+
+.card-icon {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 11px;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-top: 9px;
+    overflow-wrap: anywhere;
+}
+
+.biru {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+}
+
+.orange {
+    background: linear-gradient(135deg, #ea580c, #f59e0b);
+}
+
+.hijau {
+    background: linear-gradient(135deg, #059669, #22c55e);
+}
+
+.ungu {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.panel {
+    background: white;
+    padding: 17px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px #0001;
+}
+
+/* =========================
+   FORM INPUT
+========================= */
+
+form {
+    width: 100%;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 2px #bae6fd;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #0284c7;
+    width: 100%;
+}
+
+.btn-primary:active {
+    background: #075985;
+}
+
+.btn-bayar {
+    background: #16a34a;
+    margin: 2px;
+}
+
+.btn-hapus {
+    background: #dc2626;
+    margin: 2px;
+}
+
+/* =========================
+   TABEL SISWA
+========================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 17px;
+}
+
+table {
+    width: 100%;
+    min-width: 490px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e0f2fe;
+    color: #075985;
+    padding: 12px 8px;
+    text-align: left;
+    font-size: 12px;
+}
+
+td {
+    padding: 11px 8px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 12px;
+}
+
+tr:hover td {
+    background: #f8fafc;
+}
+
+.lunas {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.belum {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* =========================
+   RIWAYAT TRANSAKSI
+========================= */
+
+.riwayat {
+    background: #f8fafc;
+    border-left: 4px solid #0284c7;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.riwayat p {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.riwayat strong {
+    color: #075985;
+}
+
+.kosong {
+    color: #94a3b8;
+    font-size: 13px;
+    padding: 12px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #075985;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer h3 {
+    font-size: 17px;
+    margin-bottom: 9px;
+}
+
+footer p {
+    color: #dbeafe;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        padding: 13px;
+    }
+
+    .header {
+        padding: 23px 15px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 16px 11px;
+    }
+}
+
+/* HP LAYAR KECIL */
+
+@media screen and (max-width: 350px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+  }
+                                
