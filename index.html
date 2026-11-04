@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uang Kas Sekolah</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f1f5f9;
+    color: #1e293b;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #075985, #0284c7);
+    color: white;
+    padding: 25px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 42px;
+}
+
+header h1 {
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+header p {
+    font-size: 12px;
+    margin-top: 6px;
+    color: #dbeafe;
+}
+
+/* MENU */
+nav {
+    background: white;
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 10px #0001;
+}
+
+nav a {
+    flex-shrink: 0;
+    text-decoration: none;
+    color: #075985;
+    background: #e0f2fe;
+    padding: 10px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    padding: 16px;
+}
+
+section {
+    margin-bottom: 23px;
+    scroll-margin-top: 65px;
+}
+
+.judul {
+    margin-bottom: 15px;
+}
+
+.judul h2 {
+    color: #075985;
+    font-size: 21px;
+}
+
+.judul p {
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* DASHBOARD */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.card {
+    min-width: 0;
+    padding: 16px 12px;
+    border-radius: 13px;
+    color: white;
+    box-shadow: 0 4px 10px #0001;
+}
+
+.card .icon {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 11px;
+    opacity: 0.95;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-top: 8px;
+    overflow-wrap: anywhere;
+}
+
+.biru {
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+}
+
+.orange {
+    background: linear-gradient(135deg, #ea580c, #f59e0b);
+}
+
+.hijau {
+    background: linear-gradient(135deg, #059669, #22c55e);
+}
+
+.ungu {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+}
+
+/* PANEL */
+.panel {
+    background: white;
+    padding: 17px;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px #0000000c;
+}
+
+.panel h2 {
+    color: #075985;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.deskripsi {
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 17px;
+}
+
+/* INPUT */
+input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0284c7;
+}
+
+/* BUTTON */
+button {
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tambah {
+    background: #0284c7;
+    width: 100%;
+}
+
+.bayar {
+    background: #16a34a;
+    margin: 2px;
+}
+
+.hapus {
+    background: #dc2626;
+    margin: 2px;
+}
+
+/* TABEL */
+.table-box {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    min-width: 490px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #e0f2fe;
+    color: #075985;
+    padding: 12px 8px;
+    text-align: left;
+    font-size: 12px;
+}
+
+td {
+    padding: 11px 8px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 12px;
+}
+
+.lunas {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.belum {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* RIWAYAT */
+.riwayat {
+    background: #f8fafc;
+    border-left: 4px solid #0284c7;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.riwayat p {
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.riwayat strong {
+    color: #075985;
+}
+
+.kosong {
+    color: #94a3b8;
+    font-size: 13px;
+    padding: 12px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #075985;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 11px;
+    margin-top: 6px;
+    color: #dbeafe;
+}
+
+/* HP KECIL */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 13px 9px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 11px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">💰</div>
+    <div>
+        <h1>UANG KAS SEKOLAH</h1>
+        <p>Sistem Informasi Keuangan Kelas</p>
+    </div>
+</header>
+
+<!-- MENU -->
+<nav>
+    <a href="#dashboard">🏠 Dashboard</a>
+    <a href="#siswa">👨‍🎓 Data Siswa</a>
+    <a href="#pengeluaran">💸 Pengeluaran</a>
+    <a href="#riwayat">📋 Riwayat</a>
+</nav>
+
+<div class="container">
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+
+    <div class="judul">
+        <h2>Dashboard</h2>
+        <p>Ringkasan keuangan kelas</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card biru">
+            <div class="icon">💵</div>
+            <p>Total Pemasukan</p>
+            <h3 id="pemasukan">Rp0</h3>
+        </div>
+
+        <div class="card orange">
+            <div class="icon">💸</div>
+            <p>Total Pengeluaran</p>
+            <h3 id="pengeluaranTotal">Rp0</h3>
+        </div>
+
+        <div class="card hijau">
+            <div class="icon">🏦</div>
+            <p>Saldo Kas</p>
+            <h3 id="saldo">Rp0</h3>
+        </div>
+
+        <div class="card ungu">
+            <div class="icon">👨‍🎓</div>
+            <p>Jumlah Siswa</p>
+            <h3 id="jumlahSiswa">0</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- DATA SISWA -->
+<section id="siswa" class="panel">
+
+    <h2>📋 Data Siswa</h2>
+    <p class="deskripsi">Tambahkan anggota kelas</p>
+
+    <input type="text" id="nama"
+        placeholder="Masukkan nama siswa">
+
+    <input type="text" id="kelas"
+        placeholder="Masukkan kelas">
+
+    <button class="tambah" onclick="tambahSiswa()">
+        + Tambah Siswa
+    </button>
+
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="daftarSiswa"></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- PENGELUARAN -->
+<section id="pengeluaran" class="panel">
+
+    <h2>💸 Pengeluaran Kas</h2>
+    <p class="deskripsi">Catat penggunaan uang kas</p>
+
+    <input type="text" id="keterangan"
+        placeholder="Keterangan pengeluaran">
+
+    <input type="number" id="nominal"
+        placeholder="Jumlah pengeluaran">
+
+    <button class="tambah" onclick="tambahPengeluaran()">
+        Simpan Pengeluaran
+    </button>
+
+</section>
+
+<!-- RIWAYAT -->
+<section id="riwayat" class="panel">
+
+    <h2>📋 Riwayat Transaksi</h2>
+    <p class="deskripsi">Catatan uang masuk dan keluar</p>
+
+    <div id="daftarRiwayat">
+        <p class="kosong">Belum ada transaksi.</p>
+    </div>
+
+</section>
+
+</div>
+
+<footer>
+    <h3>💰 UANG KAS SEKOLAH</h3>
+    <p>Sistem Informasi Keuangan Kelas</p>
+    <p>Project Kelompok Web Mobile © 2026</p>
+</footer>
+
+<script>
+
+// DATABASE
+let siswa = JSON.parse(
+    localStorage.getItem("dataSiswa")
+) || [];
+
+let transaksi = JSON.parse(
+    localStorage.getItem("dataTransaksi")
+) || [];
+
+const TARIF = 5000;
+
+
+// SIMPAN DATA
+function simpan() {
+    localStorage.setItem(
+        "dataSiswa",
+        JSON.stringify(siswa)
+    );
+
+    localStorage.setItem(
+        "dataTransaksi",
+        JSON.stringify(transaksi)
+    );
+}
+
+
+// FORMAT RUPIAH
+function rupiah(angka) {
+    return "Rp" + angka.toLocaleString("id-ID");
+}
+
+
+// BULAN SEKARANG
+function bulanIni() {
+    let d = new Date();
+
+    return d.getFullYear() + "-" +
+        String(d.getMonth()+1).padStart(2,"0");
+}
+
+
+// CEK PEMBAYARAN
+function sudahBayar(id) {
+    return transaksi.some(t =>
+        t.tipe === "masuk" &&
+        t.siswaId === id &&
+        t.bulan === bulanIni()
+    );
+}
+
+
+// TAMBAH SISWA
+function tambahSiswa() {
+
+    let nama = document.getElementById("nama").value.trim();
+    let kelas = document.getElementById("kelas").value.trim();
+
+    if (!nama || !kelas) {
+        alert("Nama dan kelas wajib diisi!");
+        return;
+    }
+
+    siswa.push({
+        id: Date.now() + Math.random(),
+        nama: nama,
+        kelas: kelas
+    });
+
+    document.getElementById("nama").value = "";
+    document.getElementById("kelas").value = "";
+
+    simpan();
+    tampilkan();
+
+    alert("Siswa berhasil ditambahkan!");
+}
+
+
+// BAYAR KAS
+function bayarKas(id) {
+
+    let data = siswa.find(s => s.id === id);
+
+    if (!data) return;
+
+    if (sudahBayar(id)) {
+        alert("Siswa sudah membayar bulan ini!");
+        return;
+    }
+
+    transaksi.unshift({
+        tipe: "masuk",
+        siswaId: id,
+        nama: data.nama,
+        jumlah: TARIF,
+        bulan: bulanIni(),
+        tanggal: new Date().toLocaleDateString("id-ID")
+    });
+
+    simpan();
+    tampilkan();
+
+    alert("Pembayaran berhasil dicatat!");
+}
+
+
+// HAPUS SISWA
+function hapusSiswa(id) {
+
+    if (!confirm("Hapus data siswa ini?")) return;
+
+    siswa = siswa.filter(s => s.id !== id);
+
+    simpan();
+    tampilkan();
+}
+
+
+// HITUNG SALDO
+function hitungSaldo() {
+
+    return transaksi.reduce((total,t) => {
+        return total + (
+            t.tipe === "masuk"
+            ? t.jumlah
+            : -t.jumlah
+        );
+    }, 0);
+}
+
+
+// TAMBAH PENGELUARAN
+function tambahPengeluaran() {
+
+    let ket = document.getElementById("keterangan").value.trim();
+
+    let nominal = Number(
+        document.getElementById("nominal").value
+    );
+
+    if (!ket || !Number.isFinite(nominal) || nominal <= 0) {
+        alert("Isi keterangan dan nominal dengan benar!");
+        return;
+    }
+
+    if (nominal > hitungSaldo()) {
+        alert("Saldo kas tidak mencukupi!");
+        return;
+    }
+
+    transaksi.unshift({
+        tipe: "keluar",
+        nama: ket,
+        jumlah: nominal,
+        tanggal: new Date().toLocaleDateString("id-ID")
+    });
+
+    document.getElementById("keterangan").value = "";
+    document.getElementById("nominal").value = "";
+
+    simpan();
+    tampilkan();
+
+    alert("Pengeluaran berhasil disimpan!");
+}
+
+
+// AMANKAN TEKS
+function aman(teks) {
+    return String(teks).replace(/[&<>"']/g, c => ({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+    })[c]);
+}
+
+
+// TAMPILKAN DATA
+function tampilkan() {
+
+    let masuk = transaksi
+        .filter(t => t.tipe === "masuk")
+        .reduce((a,b) => a+b.jumlah, 0);
+
+    let keluar = transaksi
+        .filter(t => t.tipe === "keluar")
+        .reduce((a,b) => a+b.jumlah, 0);
+
+    document.getElementById("pemasukan").innerText =
+        rupiah(masuk);
+
+    document.getElementById("pengeluaranTotal").innerText =
+        rupiah(keluar);
+
+    document.getElementById("saldo").innerText =
+        rupiah(masuk-keluar);
+
+    document.getElementById("jumlahSiswa").innerText =
+        siswa.length;
+
+
+    // DATA SISWA
+    let html = "";
+
+    siswa.forEach((s,i) => {
+
+        let status = sudahBayar(s.id);
+
+        html += `
+        <tr>
+            <td>${i+1}</td>
+            <td>${aman(s.nama)}</td>
+            <td>${aman(s.kelas)}</td>
+
+            <td class="${status ? 'lunas':'belum'}">
+                ${status ? 'Lunas':'Belum Bayar'}
+            </td>
+
+            <td>
+                <button class="bayar"
+                    onclick="bayarKas(${s.id})">
+                    Bayar
+                </button>
+
+                <button class="hapus"
+                    onclick="hapusSiswa(${s.id})">
+                    Hapus
+                </button>
+            </td>
+        </tr>`;
+    });
+
+    document.getElementById("daftarSiswa").innerHTML =
+        html || `<tr>
+            <td colspan="5">Belum ada siswa.</td>
+        </tr>`;
+
+
+    // RIWAYAT
+    let riwayat = "";
+
+    transaksi.forEach(t => {
+
+        riwayat += `
+        <div class="riwayat">
+
+            <strong>
+                ${t.tipe === "masuk"
+                ? "🟢 Uang Masuk"
+                : "🔴 Uang Keluar"}
+            </strong>
+
+            <p>${aman(t.nama)}</p>
+
+            <p>${aman(t.tanggal)}</p>
+
+            <strong>${rupiah(t.jumlah)}</strong>
+
+        </div>`;
+    });
+
+    document.getElementById("daftarRiwayat").innerHTML =
+        riwayat || '<p class="kosong">Belum ada transaksi.</p>';
+}
+
+
+// JALANKAN
+tampilkan();
+
+</script>
+
+</body>
+</html>
